@@ -12,4 +12,8 @@ describe("pick", () => {
   it("finds that R.subtract can subtract 5 from 2 and get -3 when params are flipped", () => {
     return expect(require('../pick')(R, [5, 2], -3)).toEqual(['subtract'])
   })
+
+  it("finds functions that produce object outputs", () => {
+    return expect(require('../pick')(R, [{a: 5}, {b: 23}], { a: 5, b: 23 })).toEqual([ 'merge' ])
+  })
 })

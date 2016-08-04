@@ -3,7 +3,7 @@ const R = require('ramda')
 
 const isMatch = (fn, input, out) => {
     try {
-      return fn(...input) === out
+      return R.equals(fn(...input), out)
     }
     catch (e) {
       return false
