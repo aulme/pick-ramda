@@ -1,5 +1,6 @@
 "use strict"
 const R = require('ramda')
+const Combinatorics = require('js-combinatorics');
 
 const isMatch = (fn, input, out) => {
     try {
@@ -10,11 +11,17 @@ const isMatch = (fn, input, out) => {
     }
 }
 
-const pick = (lib, input, out) => {
+const onlyOfLength = (length, arr) => arr.filter(fn => fn.length === length )
+
+const pick = (lib, rawInput, out) => {
   const fns = Object.keys(lib).filter(key => typeof(lib[key]) === 'function')
 
+  const possibleInputs = Combinatorics.permutationCombination(rawInput).toArray()
+
   return fns.filter(key => {
-    return isMatch(lib[key], input, out) || isMatch(lib[key], R.reverse(input), out)
+    const fn = lib[key]
+    const correctArityInputs = onlyOfLength(fn.length, possibleInputs)
+    return R.any(input => isMatch(fn, input, out), correctArityInputs)
   })
 }
 
