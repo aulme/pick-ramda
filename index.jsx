@@ -1,19 +1,20 @@
 import React from 'react';
-import {render} from 'react-dom';
-import pick from './pick'
-import R from 'ramda'
+import ReactDOM from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RamdaPick from './RamdaPick.jsx';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
-window.pick = pick
-window.R = R
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
 
-class App extends React.Component {
-  render () {
-    return (
-      <div>
-        <p> {pick(R, [1, 2], 3)} </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <MuiThemeProvider>
+    <RamdaPick />
+  </MuiThemeProvider>
+);
 
-render(<App/>, document.getElementById('app'));
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);
