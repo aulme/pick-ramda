@@ -17,8 +17,15 @@ const RamdaPick = React.createClass({
     }
   },
   render: function() {
+    const wrapperStyle = {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }
+
     return (
-      <div>
+      <div style={wrapperStyle}>
         <Inputs onChange={this.setInputs}/>
         <Output onChange={this.setOutput}/>
         <Suggestions inputs={this.state.inputs} output={this.state.output}/>
