@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack -p",
-    "dev": "webpack -d --watch"
+    "build": "webpack -p --progress",
+    "dev": "rm ./public/bundle.* && webpack -d --watch"
   },
   "author": "",
   "license": "ISC",

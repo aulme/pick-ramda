@@ -6,10 +6,6 @@ jest.unmock('js-combinatorics')
 const R = require('ramda')
 
 describe("pick", () => {
-  it("can ignore order when asked", () => {
-
-  });
-
   it("finds that R.add can add 1 and 5 and get 7", () => {
     return expect(require('../pick')(R, [2, 5], 7)).toEqual(['add'])
   })

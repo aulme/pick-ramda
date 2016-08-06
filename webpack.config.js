@@ -10,9 +10,16 @@ var config = {
     path: BUILD_DIR,
     filename: 'bundle.js'
   },
+  plugins: [
+  new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('production')
+    }
+  })
+],
   module: {
-  loaders: [
-    {
+    loaders: [
+      {
         test : /\.jsx?/,
         exclude: /node_modules/,
         include: __dirname,
@@ -20,9 +27,9 @@ var config = {
         query: {
           presets: ['react']
         }
-    }
-  ]
-}
+      }
+    ]
+  }
 };
 
 module.exports = config;
