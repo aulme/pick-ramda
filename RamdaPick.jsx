@@ -26,6 +26,7 @@ const RamdaPick = React.createClass({
 
     return (
       <div style={wrapperStyle}>
+        <h1>Pick your Ramda</h1>
         <Inputs onChange={this.setInputs}/>
         <Output onChange={this.setOutput}/>
         <Suggestions inputs={this.state.inputs} output={this.state.output}/>

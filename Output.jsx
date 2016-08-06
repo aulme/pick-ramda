@@ -11,7 +11,7 @@ const parse = R.evolve({
 
 const Output = ({onChange}) => {
     return (<TextField
-      floatingLabelText="Output"
+      floatingLabelText="Output you want"
       floatingLabelFixed={true}
       hintText="9"
       id="output"

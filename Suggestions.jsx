@@ -11,6 +11,9 @@ const Output = ({inputs, output}) => {
   const result = pick(R, inputs, output).map(fn => `R.${fn}`).join('\n')
 
   return (<TextField
+    style={{marginTop: '30px'}}
+    floatingLabelText="Functions you could use"
+    floatingLabelFixed={true}
     multiLine={true}
     disabled={true}
     id="suggestions"
