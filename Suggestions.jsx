@@ -8,7 +8,8 @@ window.R = R
 window.pick = pick
 
 const Output = ({inputs, output}) => {
-  const result = pick(R, inputs, output).map(fn => `R.${fn}`).join('\n')
+  const ramdaWithoutUnfold = R.dissoc('unfold', R);
+  const result = pick(unfold, inputs, output).map(fn => `R.${fn}`).join('\n')
 
   return (<TextField
     style={{marginTop: '30px'}}
