@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from 'material-ui/TextField'
 
-import pick from './pick'
+import pick from 'pick-function'
 import R from 'ramda'
 
 window.R = R

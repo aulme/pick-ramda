@@ -2,7 +2,7 @@
   "name": "pick-ramda",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "pick.js",
   "scripts": {
     "test": "jest",
     "build": "webpack -p --progress",
@@ -11,8 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "js-combinatorics": "^0.5.2",
-    "ramda": "^0.21.0"
+    "material-ui": "^0.15.3",
+    "pick-function": "0.0.3",
+    "ramda": "^0.21.0",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "react-tap-event-plugin": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
@@ -20,10 +24,6 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "jest": "^14.1.0",
-    "material-ui": "^0.15.3",
-    "react": "^15.3.0",
-    "react-dom": "^15.3.0",
-    "react-tap-event-plugin": "^1.0.0",
     "webpack": "^1.13.1"
   }
 }
